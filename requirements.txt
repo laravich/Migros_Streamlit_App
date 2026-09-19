@@ -1,0 +1,7 @@
+# Pinned to the minimum versions the app was written against.
+streamlit>=1.50          # width="stretch" / height="content" table API
+pandas>=2.0
+numpy>=1.24
+plotly>=5.24             # MapLibre map traces (the app falls back to Mapbox on older versions)
+scikit-learn>=1.3        # BallTree, MinMaxScaler, train/test split, metrics
+statsmodels>=0.14        # Logit with p-values and pseudo R-squared

@@ -1,0 +1,13 @@
+# UI theme of the app itself, matched to the Plotly theme in src/config.py
+# so the interface and the charts read as one design.
+
+[theme]
+base = "light"
+primaryColor = "#F58220"             # Migros orange, used for widgets and accents
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F8FAFC" # sidebar and table background
+textColor = "#334155"
+font = "sans serif"
+
+[server]
+headless = true
