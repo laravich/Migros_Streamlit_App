@@ -1,16 +1,23 @@
 # Migros Store Expansion Analysis — Streamlit app
 
-Interactive front end for the notebook pipeline (01–08): from 3,170 Swiss postcodes
-down to a single recommended street corner in Siebnen (8854).
+Explore Swiss retail coverage, compare candidate postcodes and inspect a model-based site suggestion for Siebnen (8854). This Streamlit app presents the results of the [Migros store-location analysis notebooks](https://github.com/laravich/migros-store-location-analysis).
 
-## Run it
+**[Open the live Migros Expansion Analysis app](https://migrosstoresuggestionprojectlavanya.streamlit.app/)**
+
+The app may show a sleep screen after inactivity; use its wake button to open the dashboard. The analysis is a decision-support exercise, and its suggested coordinates are not a verified available retail site.
+
+## What the app does
+
+Starting with Swiss postcode, population, income and supermarket data, the app screens cantons, ranks unserved postcodes, compares model-based opportunities, examines catchments and explores possible site locations around Siebnen.
+
+## Run locally
 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-The app opens at http://localhost:8501.
+The app opens at http://localhost:8501. The input files are included in the `data/` directory.
 
 ## Project structure
 
@@ -58,9 +65,9 @@ Canton-level screening narrows Switzerland to Zurich, Schwyz and Aargau. Within 
 postcodes without a Migros are ranked twice: once with a hand-weighted opportunity score,
 and once with a logistic regression trained on all postcodes that learns what a "Migros
 postcode" looks like (population, income, competitor presence, 5 km catchment). A high
-model probability plus zero actual stores marks a genuine gap — Siebnen 8854. Its
+model probability plus zero actual stores flags a candidate gap — Siebnen 8854. Its
 catchment is then checked ring by ring, and a Huff gravity model scores a 100 m grid over
-the village to pick the actual site.
+the village to suggest a promising area for further on-the-ground validation.
 
 ## Known assumptions
 
